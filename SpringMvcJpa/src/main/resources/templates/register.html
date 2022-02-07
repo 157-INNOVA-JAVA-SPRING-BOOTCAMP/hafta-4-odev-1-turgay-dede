@@ -1,0 +1,49 @@
+<!doctype html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf - 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/register.css}">
+</head>
+<body class="bg-dark">
+<!--start codes-->
+
+
+<form th:method="post" th:action="@{/register}" th:object="${key_register}" >
+    <div class="container">
+        <h1 class="text-center">Kayıt Ol</h1>
+        <hr>
+
+        <label><b>Kullanıcı Adı</b></label>
+        <input th:field="*{username}"  type="text"  class="form-control" autofocus placeholder="Kullanıcı adını giriniz"   >
+        <div  class="alert" th:if="${#fields.hasErrors('username')}" >
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong >Hata!</strong> <p th:errors="*{username}">
+        </div>
+
+        <label><b>E Posta</b></label>
+        <input th:field="*{email}"  type="text"  class="form-control"  placeholder="E posta giriniz"   >
+        <div  class="alert" th:if="${#fields.hasErrors('email')}" >
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong >Hata!</strong> <p th:errors="*{email}">
+        </div>
+
+        <label><b>Şifre</b></label>
+        <input th:field="*{password}"  type="password"  class="form-control"    placeholder="Sifre giriniz" >
+        <div  class="alert" th:if="${#fields.hasErrors('password')}" >
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            <strong >Hata!</strong> <p th:errors="*{password}">
+        </div>
+
+        <button type="submit" class="registerbtn">Kayıt Ol</button>
+    </div>
+</form>
+
+<!--end codes-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
