@@ -8,9 +8,9 @@ body {
 }
 
 /* Add padding to containers */
-.container {
-    padding: 16px;
-    background-color: white;
+.card {
+   padding: 16px;
+/*    background-color: white;*/
 }
 
 /* Full-width input fields */

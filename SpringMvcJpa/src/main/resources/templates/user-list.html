@@ -1,0 +1,40 @@
+<!doctype html>
+<html th:lang="${#locale.language}" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Kullanıcılar Listesi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+        <table class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Kullanıcı Adı</th>
+                <th>E posta</th>
+                <th>Şifre</th>
+                <th>Tarih</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="user: ${user_list}">
+                <td th:text="${user.userId}" />
+                <td th:text="${user.username}" />
+                <td th:text="${user.email}" />
+                <td th:text="${user.password}" />
+                <td th:text="${user.createdDate}" />
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
